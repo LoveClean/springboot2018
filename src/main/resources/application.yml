@@ -1,0 +1,96 @@
+server:
+  port: 8088
+  session-timeout: 1800
+
+# 应用信息
+app:
+  app-name:
+  app-host:
+  allow-generate-api: true
+  allow-cross-domain-access: true
+  # 开发dev 测试test  生产 master
+  env: dev
+
+# 对象存储配置
+oss:
+  accessKeyId:
+  accessKeySecret:
+  upload-endpoint:
+  download-endpoint:
+  bucketName:
+  # 下载地址的有效时长，单位为ms，默认为半小时
+  download-url-expiration:
+
+bos:
+  accessKeyId:
+  accessKeySecret:
+  bucketName:
+  upload-endpoint:
+  download-endpoint:
+  download-url-expiration:
+
+#直播
+lss:
+  accessKeyId:
+  accessKeySecret:
+  playDomain:
+  pushDomain:
+  vodEndpoint:
+
+spring:
+  main:
+    banner-mode: console
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    multipart:
+      enabled: true
+      max-file-size: 1024Mb
+      max-request-size: 1024Mb
+  datasource:
+    name: datasource
+    initialize: false
+    url:
+    username:
+    password:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    max-active: 2
+    max-idle: 2
+    min-idle: 2
+    initial-size: 2
+    validation-query: select 1
+    test-on-borrow: true
+    test-on-return: false
+    test-while-idle: false
+    time-between-eviction-runs-millis: 3000
+    min-evictable-idle-time-millis: 3000
+    max-wait: 3000
+    jmx-enabled: true
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+
+logging:
+  path: /base-web-log
+
+# 缓存配置
+memcached:
+  servers:
+  username:
+  password:
+
+# 短信
+sms:
+  platformId:
+  privateKey:
+  publicKey:
+  url:
+
+img:
+  width: 2000
+  height: 2000
